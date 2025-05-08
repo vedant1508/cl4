@@ -1,0 +1,47 @@
+mongosh
+
+
+use mydatabase
+
+
+db.createCollection("users")
+
+
+db.users.insertMany([
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 22 }
+])
+
+
+
+// Find all
+db.users.find()
+
+// Find with condition
+db.users.find({ age: { $gt: 24 } })
+
+// Pretty print
+db.users.find().pretty()
+
+
+
+// Update one document
+db.users.updateOne(
+  { name: "Alice" },
+  { $set: { age: 26 } }
+)
+
+// Update multiple documents
+db.users.updateMany(
+  { age: { $lt: 25 } },
+  { $set: { status: "young" } }
+)
+
+
+
+
+// Delete one document
+db.users.deleteOne({ name: "Charlie" })
+
+// Delete multiple documents
+db.users.deleteMany({ age: { $gt: 30 } })
