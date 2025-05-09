@@ -1,0 +1,87 @@
+ windows
+MongoDB crud operation 
+# to start Mongodb server
+command - mongod
+# to start MongoDB client
+command mongo
+
+
+> show dbs
+> use vaibhav
+>db.createCollection("emp")
+
+>show collections
+
+#CREATE
+db.emp.insert({id:'1',name:'vaibhav'})
+WriteResult({ "nInserted" : 1 })
+
+> db.emp.insert({id:'1',name:'Dhoni'})
+WriteResult({ "nInserted" : 1 })
+
+> db.emp.insert({id:'3',name:'Virat'})
+WriteResult({ "nInserted" : 1 })
+> db.emp.insert({id:'4',name:'Sachin'})
+WriteResult({ "nInserted" : 1 })
+
+#READ
+> db.emp.find()
+> db.emp.find().pretty()
+
+
+#UPDATE
+> db.emp.update({name:"Dhoni"},{$set:{id:"2"}})
+>db.emp.update({id:"3"},{$set:{name:"mohit"}})
+#READ
+> db.emp.find()
+
+#DELETE
+
+> db.emp.remove({id:"3"})
+WriteResult({ "nRemoved" : 1 })
+
+> db.emp.find().pretty()
+
+
+ubuntu :
+- sudo service mongodb start 
+
+- mongo 
+
+> show dbs
+> use vaibhav
+>db.createCollection("emp")
+
+>show collections
+
+#CREATE
+db.emp.insert({id:'1',name:'vaibhav'})
+WriteResult({ "nInserted" : 1 })
+
+> db.emp.insert({id:'1',name:'Dhoni'})
+WriteResult({ "nInserted" : 1 })
+
+> db.emp.insert({id:'3',name:'Virat'})
+WriteResult({ "nInserted" : 1 })
+> db.emp.insert({id:'4',name:'Sachin'})
+WriteResult({ "nInserted" : 1 })
+
+#READ
+> db.emp.find()
+> db.emp.find().pretty()
+
+
+#UPDATE
+> db.emp.update({name:"Dhoni"},{$set:{id:"2"}})
+>db.emp.update({id:"3"},{$set:{name:"mohit"}})
+#READ
+> db.emp.find()
+
+#DELETE
+
+> db.emp.remove({id:"3"})
+WriteResult({ "nRemoved" : 1 })
+
+> db.emp.find().pretty()
+
+

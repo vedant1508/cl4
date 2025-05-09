@@ -1,0 +1,164 @@
+Sure, here's a step-by-step guide to installing MongoDB on Windows along with performing CRUD operations:
+
+### Installation:
+
+1. **Download MongoDB**:
+
+   Visit the official MongoDB website (https://www.mongodb.com/try/download/community) and download the appropriate version for Windows.
+
+2. **Install MongoDB**:
+
+   - Double-click the downloaded installer (.msi) file.
+   - Follow the installation wizard instructions.
+   - Choose the Complete setup type and install MongoDB Compass (optional GUI tool for MongoDB).
+
+3. **Set Up MongoDB Environment**:
+
+   - MongoDB is installed in the `C:\Program Files\MongoDB` directory by default.
+   - You might need to add the MongoDB binaries folder to the system PATH. By default, it's `C:\Program Files\MongoDB\Server\{version}\bin`.
+
+4. **Start MongoDB Server**:
+
+   - Open a command prompt as an administrator.
+   - Navigate to the MongoDB binaries directory (`C:\Program Files\MongoDB\Server\{version}\bin`).
+   - Run the following command to start the MongoDB server:
+
+     ```
+     mongod
+     ```
+
+### CRUD Operations:
+
+1. **Launch MongoDB Shell**:
+
+   - Open another command prompt window.
+   - Navigate to the MongoDB binaries directory (`C:\Program Files\MongoDB\Server\{version}\bin`).
+   - Run the following command to launch the MongoDB shell:
+
+     ```
+     mongo
+     ```
+
+2. **Create a Database and Collection**:
+
+   - In the MongoDB shell, you can create a new database using the `use` command and a new collection using the `db.createCollection()` method.
+
+     ```
+     use mydatabase
+     db.createCollection("mycollection")
+     ```
+
+3. **Perform CRUD Operations**:
+
+   - **Insert Document**:
+
+     ```
+     db.mycollection.insertOne({ name: "John", age: 30, city: "New York" })
+     ```
+
+   - **Query Document**:
+
+     ```
+     db.mycollection.find()
+     ```
+
+   - **Update Document**:
+
+     ```
+     db.mycollection.updateOne({ name: "John" }, { $set: { age: 31 } })
+     ```
+
+   - **Delete Document**:
+
+     ```
+     db.mycollection.deleteOne({ name: "John" })
+     ```
+
+That's it! You've installed MongoDB on Windows and performed basic CRUD operations. Make sure to replace `mydatabase` and `mycollection` with your actual database and collection names.
+
+
+
+Certainly! Here's a step-by-step guide to installing MongoDB on Ubuntu and performing CRUD operations:
+
+### Installation:
+
+1. **Update Package Index**:
+
+   Open a terminal and update the package index to ensure you have the latest available versions:
+
+   ```
+   sudo apt update
+   ```
+
+2. **Install MongoDB**:
+
+   - Install MongoDB with the following command:
+
+     ```
+     sudo apt install -y mongodb
+     ```
+
+   - This command will install MongoDB and its dependencies.
+
+3. **Start MongoDB Service**:
+
+   - MongoDB should start automatically after installation. You can verify its status with:
+
+     ```
+     sudo systemctl status mongodb
+     ```
+
+   - If MongoDB is not running, start it with:
+
+     ```
+     sudo systemctl start mongodb
+     ```
+
+### CRUD Operations:
+
+1. **Launch MongoDB Shell**:
+
+   - Open a terminal and type:
+
+     ```
+     mongo
+     ```
+
+   - This will launch the MongoDB shell.
+
+2. **Create a Database and Collection**:
+
+   - In the MongoDB shell, create a new database using the `use` command and a new collection using the `db.createCollection()` method.
+
+     ```
+     use mydatabase
+     db.createCollection("mycollection")
+     ```
+
+3. **Perform CRUD Operations**:
+
+   - **Insert Document**:
+
+     ```
+     db.mycollection.insertOne({ name: "John", age: 30, city: "New York" })
+     ```
+
+   - **Query Document**:
+
+     ```
+     db.mycollection.find()
+     ```
+
+   - **Update Document**:
+
+     ```
+     db.mycollection.updateOne({ name: "John" }, { $set: { age: 31 } })
+     ```
+
+   - **Delete Document**:
+
+     ```
+     db.mycollection.deleteOne({ name: "John" })
+     ```
+
+That's it! You've installed MongoDB on Ubuntu and performed basic CRUD operations. Make sure to replace `mydatabase` and `mycollection` with your actual database and collection names.
